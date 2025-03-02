@@ -32,17 +32,6 @@ function SlowComponent(_props: { unused?: unknown }) {
   );
 }
 
-function CounterButton(props: { onClick: () => void }) {
-  return (
-    <button
-      onClick={props.onClick}
-      className="px-4 py-2 bg-neutral-700 text-white rounded hover:bg-neutral-600 border border-white/20"
-    >
-      Increase count
-    </button>
-  );
-}
-
 function ColorPicker({
   value,
   onChange,
@@ -61,7 +50,6 @@ function ColorPicker({
 }
 
 function DemoComponent() {
-  const [count, setCount] = useState(0);
   const [color, setColor] = useState("#ffffff");
 
   return (
@@ -72,14 +60,6 @@ function DemoComponent() {
         <div className="mt-2">
           Current value: <br />
           <span className="font-mono">{color}</span>
-        </div>
-      </div>
-      <div className="flex flex-col p-4 border border-white h-64 w-96 gap-4">
-        <h2 className="text-xl font-bold mb-8 text-center">Counter</h2>
-        <CounterButton onClick={() => setCount((count) => count + 1)} />
-        <div className="mt-2">
-          Current value: <br />
-          <span className="font-mono">{count}</span>
         </div>
       </div>
       <div className="flex flex-col p-4 border border-white h-64 w-96 gap-2">
