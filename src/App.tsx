@@ -1,12 +1,16 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
-function SlowComponent(props: { unused?: any }) {
-  const ref = useRef<HTMLButtonElement>(null);
+function SlowComponent(_props: { unused?: unknown }) {
+  // const ref = useRef<string | null>(null);
+  // ref.current = "test";
 
-  useEffect(() => {
-    console.log("SlowComponent mounted", ref.current);
-  }, [ref]);
+  // if (_props) {
+  //   useEffect(() => {
+  //     console.log("SlowComponent mounted");
+  //   }, []);
+  // }
 
   const largeArray = Array.from({ length: 10000 }, (_, i) => i);
 
@@ -57,7 +61,7 @@ function DemoComponent() {
   const [color, setColor] = useState("#ffffff");
 
   return (
-    <div className={`flex gap-8`}>
+    <div className="flex flex-wrap gap-8">
       <div className="flex flex-col p-4 border border-white h-64 w-96 gap-4">
         <h2 className="text-xl font-bold mb-8 text-center">Color Picker</h2>
         <ColorPicker value={color} onChange={(e) => setColor(e)} />
