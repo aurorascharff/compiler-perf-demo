@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, createContext, useContext } from "react";
 import "./App.css";
+import ColorProvider, { useColor } from "./ColorProvider";
 
 function SlowComponent(_props: { unused?: unknown }) {
   // const ref = useRef<string | null>(null);
@@ -42,15 +43,18 @@ function CounterButton(props: { onClick: () => void }) {
   );
 }
 
-function ColorPicker(props: {
+function ColorPicker({
+  value,
+  onChange,
+}: {
   value: string;
   onChange: (value: string) => void;
 }) {
   return (
     <input
       type="color"
-      value={props.value}
-      onChange={(e) => props.onChange(e.target.value)}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
       className="w-full h-12 cursor-pointer rounded border border-white/20 bg-neutral-700 p-1"
     />
   );
@@ -64,7 +68,7 @@ function DemoComponent() {
     <div className="flex flex-wrap gap-8">
       <div className="flex flex-col p-4 border border-white h-64 w-96 gap-4">
         <h2 className="text-xl font-bold mb-8 text-center">Color Picker</h2>
-        <ColorPicker value={color} onChange={(e) => setColor(e)} />
+        <ColorPicker value={color} onChange={setColor} />
         <div className="mt-2">
           Current value: <br />
           <span className="font-mono">{color}</span>
@@ -91,14 +95,16 @@ function DemoComponent() {
 
 function ParentComponent() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <h1 className="text-2xl font-bold text-center py-8 absolute top-0 left-0 right-0">
-        React Compiler Demo
-      </h1>
-      <div className={`flex items-center justify-center flex-grow`}>
-        <DemoComponent />
+    <ColorProvider>
+      <div className="flex flex-col min-h-screen">
+        <h1 className="text-2xl font-bold text-center py-8 absolute top-0 left-0 right-0">
+          React Compiler Demo
+        </h1>
+        <div className={`flex items-center justify-center flex-grow`}>
+          <DemoComponent />
+        </div>
       </div>
-    </div>
+    </ColorProvider>
   );
 }
 
