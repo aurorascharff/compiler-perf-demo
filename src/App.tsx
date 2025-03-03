@@ -1,18 +1,9 @@
 import "./App.css";
 
 import { useState } from "react";
-import ColorProvider from "./ColorProvider";
 
 function SlowComponent({ logStatement }: { logStatement: string }) {
   console.log("SlowComponent render", logStatement);
-  // const ref = useRef<string | null>(null);
-  // ref.current = "test";
-
-  // if (prop) {
-  //   useEffect(() => {
-  //     console.log("SlowComponent mounted");
-  //   }, []);
-  // }
 
   const largeArray = Array.from({ length: 10000 }, (_, i) => i);
 
@@ -76,16 +67,14 @@ function DemoComponent() {
 
 function ParentComponent() {
   return (
-    <ColorProvider>
-      <div className="flex flex-col min-h-screen">
-        <h1 className="text-2xl font-bold text-center py-8 absolute top-0 left-0 right-0">
-          React Compiler Demo
-        </h1>
-        <div className={`flex items-center justify-center flex-grow`}>
-          <DemoComponent />
-        </div>
+    <div className="flex flex-col min-h-screen">
+      <h1 className="text-2xl font-bold text-center py-8 absolute top-0 left-0 right-0">
+        React Compiler Demo
+      </h1>
+      <div className={`flex items-center justify-center flex-grow`}>
+        <DemoComponent />
       </div>
-    </ColorProvider>
+    </div>
   );
 }
 
