@@ -1,7 +1,6 @@
 import "./App.css";
 
-import { useState } from "react";
-import ColorProvider from "./ColorProvider";
+import ColorProvider, { useColor } from "./ColorProvider";
 
 function SlowComponent({ logStatement }: { logStatement: string }) {
   console.log("SlowComponent render", logStatement);
