@@ -78,3 +78,7 @@ ref.current = "test";
 ```
 
 - Se at memo badgen også nå har forsvunnet.
+
+## Compiler i andre rammeverk
+
+Se gjennom [dokumentasjonen](https://react.dev/learn/react-compiler) for å se at det er mulig å bruke Compiler i andre rammeverk også, som Next.js og Remix.
