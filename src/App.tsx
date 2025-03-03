@@ -1,13 +1,14 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { useEffect, useRef, useState, createContext, useContext } from "react";
 import "./App.css";
-import ColorProvider, { useColor } from "./ColorProvider";
 
-function SlowComponent(_props: { unused?: unknown }) {
+import { useState } from "react";
+import ColorProvider from "./ColorProvider";
+
+function SlowComponent({ logStatement }: { logStatement: string }) {
+  console.log("SlowComponent render", logStatement);
   // const ref = useRef<string | null>(null);
   // ref.current = "test";
 
-  // if (_props) {
+  // if (prop) {
   //   useEffect(() => {
   //     console.log("SlowComponent mounted");
   //   }, []);
@@ -67,7 +68,7 @@ function DemoComponent() {
         <span className="text-center text-neutral-200 font-light">
           (This component renders 10,000 boxes)
         </span>
-        <SlowComponent unused={{ name: "nope" }} />
+        <SlowComponent logStatement="test" />
       </div>
     </div>
   );
