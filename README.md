@@ -1,50 +1,34 @@
-# React + TypeScript + Vite
+# React Compiler Performance Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a demonstration of the React Compiler, a tool that automatically optimizes React applications for better performance. The demo showcases how the compiler can identify and fix performance issues in a simple Vite React app.
 
-Currently, two official plugins are available:
+The project uses [React Scan](https://react-scan.com/) to identify performance issues, and [React Compiler](https://react.dev/learn/react-compiler) to fix them.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It's based on the demo [compiler-perf-demo](https://github.com/t3dotgg/compiler-perf-demo) by [@t3dotgg](https://github.com/t3dotgg).
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To get started with the demo, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
+Install the dependencies:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Start the development server:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+## Steps
+
+1. Open your browser and navigate to `http://localhost:5173`.
+2. Open the React DevTools Profiler and start recording.
+3. Change the color in the color picker and observe the performance drop.
+4. Comment in the the React Scan script in `index.html`, enable it, and observe the unnecessary re-renders.
+5. Open Copilot Edits and paste the prompt from React Scan to fix the issue manually.
+6. Observe the performance improvement.
+7. Remove the manual fix and enable the React Compiler to in `vite.config.ts`.
+8. Observe the performance improvement again.

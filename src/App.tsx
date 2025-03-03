@@ -4,14 +4,6 @@ import ColorProvider, { useColor } from "./ColorProvider";
 
 function SlowComponent({ logStatement }: { logStatement: string }) {
   console.log("SlowComponent render", logStatement);
-  // const ref = useRef<string | null>(null);
-  // ref.current = "test";
-
-  // if (prop) {
-  //   useEffect(() => {
-  //     console.log("SlowComponent mounted");
-  //   }, []);
-  // }
 
   const largeArray = Array.from({ length: 10000 }, (_, i) => i);
 
