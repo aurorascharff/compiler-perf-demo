@@ -32,31 +32,27 @@ function SlowComponent(_props: { unused?: unknown }) {
   );
 }
 
-function ColorPicker({
-  value,
-  onChange,
-}: {
-  value: string;
-  onChange: (value: string) => void;
-}) {
+function ColorPicker() {
+  const { setColor, color } = useColor();
+
   return (
     <input
       type="color"
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
+      value={color}
+      onChange={(e) => setColor(e.target.value)}
       className="w-full h-12 cursor-pointer rounded border border-white/20 bg-neutral-700 p-1"
     />
   );
 }
 
 function DemoComponent() {
-  const [color, setColor] = useState("#ffffff");
+  const { color } = useColor();
 
   return (
     <div className="flex flex-wrap gap-8">
       <div className="flex flex-col p-4 border border-white h-64 w-96 gap-4">
         <h2 className="text-xl font-bold mb-8 text-center">Color Picker</h2>
-        <ColorPicker value={color} onChange={setColor} />
+        <ColorPicker />
         <div className="mt-2">
           Current value: <br />
           <span className="font-mono">{color}</span>
