@@ -38,6 +38,7 @@
 ## Fiks problemet automatisk med Compiler
 
 - Fjern den manuelle løsningen. Vi er tilbake til utgangspunktet.
+- Se compiler-pakken i package.json.
 - Skru på Compiler i vite.config.ts. Se at det løste problemet automatisk.
 
 ## React Compiler Devtools
