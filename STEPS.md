@@ -20,6 +20,7 @@
 - Laget av Aiden Bai, grunnlegger av Million.js hvis dere har hørt om det. Også relatert til performance.
 - Sykt enkelt bruke, finnes om NPM pakke men vi kan også bare legge inn en script-tag.
 - Se UI-en, prøv å bytte 1 farge og se hva som rerendres basert på dette trykket.
+- Kan trykke på en komponent og se hvorfor den rerendret sist.
 - Bytt farge mange ganger, og se hva React Scan viser oss: varsler og FPS drop.
 - Kan trykke på denne og se kilden til FPS droppet.
 - Trykker på SlowComponent "Ranked" og ser at den rendret x29 ganger på 341 ms, men at det ikke var noen endringer funnet i komponenten, og at den kunne vært memoisert.
