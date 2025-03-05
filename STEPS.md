@@ -2,8 +2,6 @@
 
 ## Startpunkt
 
-- Comment out React Scan
-- Comment ut Compiler plugin
 - Vi har en Vite React app her, veldig enkel. Color picker som setter en farge i state, og en SlowComponent som rendrer 10000 fargede bokser.
 - Når vi endrer mange farger i color picker, så får vi en ganske heftig FSP drop. La oss si vi ikke skjønner hva som går galt, og vil debugge dette.
 
