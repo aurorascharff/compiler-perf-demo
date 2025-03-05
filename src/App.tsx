@@ -1,5 +1,4 @@
 import "./App.css";
-
 import ColorProvider, { useColor } from "./ColorProvider";
 
 function SlowComponent({ logStatement }: { logStatement: string }) {
