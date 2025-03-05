@@ -45,7 +45,7 @@ function DemoComponent() {
   const [color, setColor] = useState("#ffffff");
 
   return (
-    <div className="flex flex-wrap gap-8">
+    <div className="flex flex-wrap justify-center gap-8">
       <div className="flex flex-col p-4 border border-white h-64 w-96 gap-4">
         <h2 className="text-xl font-bold mb-8 text-center">Color Picker</h2>
         <ColorPicker value={color} onChange={setColor} />
