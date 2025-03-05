@@ -2,8 +2,6 @@
 
 ## Startpunkt
 
-- Comment out React Scan
-- Comment ut Compiler plugin
 - Vi har en Vite React app her, veldig enkel. Color picker som setter en farge i state, og en SlowComponent som rendrer 10000 fargede bokser.
 - Når vi endrer mange farger i color picker, så får vi en ganske heftig FSP drop. La oss si vi ikke skjønner hva som går galt, og vil debugge dette.
 
@@ -20,6 +18,7 @@
 - Laget av Aiden Bai, grunnlegger av Million.js hvis dere har hørt om det. Også relatert til performance.
 - Sykt enkelt bruke, finnes om NPM pakke men vi kan også bare legge inn en script-tag.
 - Se UI-en, prøv å bytte 1 farge og se hva som rerendres basert på dette trykket.
+- Kan trykke på en komponent og se hvorfor den rerendret sist.
 - Bytt farge mange ganger, og se hva React Scan viser oss: varsler og FPS drop.
 - Kan trykke på denne og se kilden til FPS droppet.
 - Trykker på SlowComponent "Ranked" og ser at den rendret x29 ganger på 341 ms, men at det ikke var noen endringer funnet i komponenten, og at den kunne vært memoisert.
@@ -38,6 +37,7 @@
 ## Fiks problemet automatisk med Compiler
 
 - Fjern den manuelle løsningen. Vi er tilbake til utgangspunktet.
+- Se compiler-pakken i package.json.
 - Skru på Compiler i vite.config.ts. Se at det løste problemet automatisk.
 
 ## React Compiler Devtools
@@ -77,3 +77,7 @@ ref.current = "test";
 ```
 
 - Se at memo badgen også nå har forsvunnet.
+
+## Compiler i andre rammeverk
+
+Se gjennom [dokumentasjonen](https://react.dev/learn/react-compiler) for å se at det er mulig å bruke Compiler i andre rammeverk også, som Next.js og Remix.
