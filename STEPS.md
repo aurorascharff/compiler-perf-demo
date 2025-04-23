@@ -23,9 +23,9 @@
 - Kan trykke på denne og se kilden til FPS droppet.
 - Trykker på SlowComponent "Ranked" og ser at den rendret x29 ganger på 341 ms, men at det ikke var noen endringer funnet i komponenten, og at den kunne vært memoisert.
 - Se "Overview" hva som ble brukt tid på, nyttig i fremtiden.
-- Gå til "prompts", les og kopier promptet. Det forklarer funnet.
+- Gå til "prompts", les promptet. Det forklarer funnet, og kan brukes til å fikse problemet.
 
-## Fiks problemet manuelt (med AI)
+## (Fiks problemet manuelt (med AI))
 
 - Åpne Copilot Edits som dere kjenner fra Devlins workshop, og lim inn promptet.
 - AIen jobber og forklarer. Bruk React memo for å skippe rerenders av komponenter når props ikke endres.
@@ -33,6 +33,12 @@
 - AI er ferdig, og gir oss et forslag. Vi godkjenner det.
 - Når vi nå prøver igjen, ser vi at FPS droppet er borte. React Scan viser ikke lenger en rerender av SlowComponent. Og vi kan se det i Profiler.
 - Det tok litt tid. Debugging og løsing og kan være litt tidkrevende selv med gode verktøy.
+
+## Fiks problemet manuelt (uten AI)
+
+- Men vi skal bare løse det manuelt. Bruk React memo for å skippe rerenders av komponenter når props ikke endres.
+- Når vi nå prøver igjen, ser vi at FPS droppet er borte. React Scan viser ikke lenger en rerender av SlowComponent. Og vi kan se det i Profiler.
+- Debugging og løsing og kan være litt tidkrevende selv med gode verktøy.
 
 ## Fiks problemet automatisk med Compiler
 
