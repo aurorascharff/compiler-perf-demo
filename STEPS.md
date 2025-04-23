@@ -69,14 +69,6 @@
 
 - Se at memom badgen nå har forsvunnet. Compiler klarte fremdeles å optimalisere, men det er egentlig ikke noen garanti per dokumentasjonen.
 - Det går fint at man har feil, og det går an å disable denne feilen per komponent og fikse dem litt etter litt, det vil bare si at det er færre memoiserte komponenter.
-- En annen regel er at vi ikke kan aksessere ref values i render. Legg inn følgende og se at vi får en error:
-
-```tsx
-const ref = useRef<string | null>(null);
-ref.current = "test";
-```
-
-- Se at memo badgen også nå har forsvunnet.
 
 ## Compiler i andre rammeverk
 
