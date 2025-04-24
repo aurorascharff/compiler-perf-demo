@@ -80,4 +80,4 @@
 
 Se gjennom [dokumentasjonen](https://react.dev/learn/react-compiler) for å se at det er mulig å bruke Compiler i andre rammeverk også, som Next.js og Remix.
 
-Test ut compiler, og allerede nå kan man installere eslint pluginen og få warnings og errors i editoren. Beta, men i bruk hos Meta, og sikkert snart ute! Viktig å vite om før man manuelt memoiserer overalt.
+Test ut compiler, og allerede nå kan man installere eslint pluginen og få warnings og errors i editoren og kan får mest ut av Compiler når man skrur den på ved release. RC, snart ute! Viktig å vite om før man manuelt memoiserer overalt.
